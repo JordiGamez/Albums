@@ -20,8 +20,8 @@ class AlbumsView: UIView {
     // MARK: - Constants
     
     let viewName = "AlbumsView"
-    let cellView = "AlbumsViewTableViewCell"
-    let cellIdentifier = "AlbumsTableViewCellIdentifier"
+    let cellView = "AlbumTableViewCell"
+    let cellIdentifier = "AlbumTableViewCellIdentifier"
     
     // MARK: - Initializers
     
@@ -40,5 +40,13 @@ class AlbumsView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    // MARK: - Public methods
+    
+    /// Reload table view
+    func reloadTable() {
+        albumsTableView.reloadData()
+        albumsTableView.isHidden = false
     }
 }

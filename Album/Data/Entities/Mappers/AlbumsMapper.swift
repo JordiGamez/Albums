@@ -15,6 +15,6 @@ class AlbumsMapper {
             albums.append(object)
         }
         
-        return Albums(albums: albums)
+        return Albums(list: albums)
     }
 }

@@ -1,5 +1,5 @@
 import Foundation
 
 struct Albums {
-    var albums: [Album]
+    var list: [Album]
 }

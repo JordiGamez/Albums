@@ -8,7 +8,7 @@ enum AccessibilityIdentifier {
         case albumsTableView            = "AlbumsView_albumsTableView"
     }
     
-    enum AlbumsViewTableViewCell: String {
-        case albumNameLabel             = "AlbumsViewTableViewCell_albumNameLabel"
+    enum AlbumTableViewCell: String {
+        case albumTitleLabel             = "AlbumTableViewCell_albumTitleLabel"
     }
 }

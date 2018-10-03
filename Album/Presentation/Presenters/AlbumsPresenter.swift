@@ -31,7 +31,7 @@ extension AlbumsPresenter: AlbumsPresenterProtocol {
         _ = loadAlbumsUseCase?.execute().subscribe(
             onNext: { response in
                 DispatchQueue.main.async {
-                    
+                    self.view?.display(list: response)
                 }
             }, onError: { error in
                 DispatchQueue.main.async {

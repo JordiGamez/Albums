@@ -40,6 +40,9 @@
 		C6531752216529CA0085464C /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6531751216529CA0085464C /* AlbumEntity.swift */; };
 		C653175421652AA90085464C /* AlbumsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653175321652AA90085464C /* AlbumsMapper.swift */; };
 		C65317592165396B0085464C /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65317582165396B0085464C /* SwinjectStoryboard+Extension.swift */; };
+		C653175B216546BF0085464C /* AlbumsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C653175A216546BF0085464C /* AlbumsView.xib */; };
+		C653175D216547480085464C /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653175C216547480085464C /* AlbumTableViewCell.swift */; };
+		C653175F2165479F0085464C /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C653175E2165479F0085464C /* AlbumTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		C6531751216529CA0085464C /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
 		C653175321652AA90085464C /* AlbumsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsMapper.swift; sourceTree = "<group>"; };
 		C65317582165396B0085464C /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		C653175A216546BF0085464C /* AlbumsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsView.xib; sourceTree = "<group>"; };
+		C653175C216547480085464C /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		C653175E2165479F0085464C /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		CFFE90882B168CFF72EE5959 /* Pods_AlbumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03B773B0290EE9BB5FA5509 /* Pods-AlbumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumTests/Pods-AlbumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7672A15D706ADEC798D0FCB /* Pods-AlbumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumUITests/Pods-AlbumUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +335,8 @@
 		C653171F216521210085464C /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				C653175A216546BF0085464C /* AlbumsView.xib */,
+				C653175E2165479F0085464C /* AlbumTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				C653172D216522CE0085464C /* AlbumsView.swift */,
+				C653175C216547480085464C /* AlbumTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -552,6 +561,8 @@
 			files = (
 				C65316EF21651CF00085464C /* LaunchScreen.storyboard in Resources */,
 				C65316EC21651CF00085464C /* Assets.xcassets in Resources */,
+				C653175B216546BF0085464C /* AlbumsView.xib in Resources */,
+				C653175F2165479F0085464C /* AlbumTableViewCell.xib in Resources */,
 				C65316E721651CED0085464C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +696,7 @@
 				C653173E216526D80085464C /* AlbumsProvider.swift in Sources */,
 				C653172E216522CE0085464C /* AlbumsView.swift in Sources */,
 				C653174C216528F60085464C /* Client.swift in Sources */,
+				C653175D216547480085464C /* AlbumTableViewCell.swift in Sources */,
 				C653175421652AA90085464C /* AlbumsMapper.swift in Sources */,
 				C653173A2165252F0085464C /* LoadAlbumsUseCase.swift in Sources */,
 			);

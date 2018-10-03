@@ -8,7 +8,7 @@ class AlbumsViewController: UIViewController {
     
     // MARK: - Constants
     
-    let customCellIdentifier = "AlbumsTableViewCellIdentifier"
+    let customCellIdentifier = "AlbumTableViewCellIdentifier"
     
     // MARK: - Variables
     
@@ -19,6 +19,9 @@ class AlbumsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        customView.albumsTableView.dataSource = self
+        customView.albumsTableView.delegate = self
         
         presenter?.bind(view: self)
         presenter?.loadAlbums()
@@ -41,5 +44,40 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: AlbumsViewProtocol {
     
+    /// Display the list of albums
+    ///
+    /// - Parameter list: Albums list
+    func display(list: Albums) {
+        albums = list
+        customView.reloadTable()
+    }
+}
+
+// MARK: - UITableViewDelegate and UITableViewDataSource protocol conformance
+
+extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let albums = albums {
+            return albums.list.count
+        }
+        return 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: customCellIdentifier, for: indexPath) as! AlbumTableViewCell
+        
+        cell.titleLabel.text = albums?.list[indexPath.row].name
+        
+        return cell
+    }
 }

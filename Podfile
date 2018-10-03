@@ -9,7 +9,10 @@ target 'Album' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
-
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
+  pod 'SwinjectAutoregistration'
+  
   target 'AlbumTests' do
     inherit! :search_paths
     # Pods for testing

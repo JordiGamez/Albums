@@ -28,7 +28,6 @@ extension Client: ClientProtocol {
                 
                 switch response.result {
                 case .success:
-                    observer.on(.next(AlbumsEntity()))
                     observer.onCompleted()
                 case .failure(let error):
                     observer.on(.error(error))

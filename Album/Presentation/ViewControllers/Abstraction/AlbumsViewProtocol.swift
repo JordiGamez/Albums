@@ -6,4 +6,7 @@ protocol AlbumsViewProtocol {
     ///
     /// - Parameter list: Albums list
     func display(list: Albums)
+    
+    /// Show error
+    func showError()
 }

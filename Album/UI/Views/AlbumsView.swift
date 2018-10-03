@@ -16,12 +16,28 @@ class AlbumsView: UIView {
             albumsTableView.register(UINib(nibName: cellView, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         }
     }
+    @IBOutlet weak var albumsActivityIndicatorView: UIActivityIndicatorView! {
+        didSet {
+            albumsActivityIndicatorView.accessibilityIdentifier = AccessibilityIdentifier.AlbumsView.albumsActivityIndicatorView.rawValue
+            albumsActivityIndicatorView.isHidden = false
+            albumsActivityIndicatorView.startAnimating()
+        }
+    }
+    @IBOutlet weak var noInternetConnectionLabel: UILabel! {
+        didSet {
+            noInternetConnectionLabel.accessibilityIdentifier = AccessibilityIdentifier.AlbumsView.noInternetConnectionLabel.rawValue
+            noInternetConnectionLabel.isHidden = true
+            noInternetConnectionLabel.numberOfLines = 0
+            noInternetConnectionLabel.text = noInternetConnectionText
+        }
+    }
     
     // MARK: - Constants
     
     let viewName = "AlbumsView"
     let cellView = "AlbumTableViewCell"
     let cellIdentifier = "AlbumTableViewCellIdentifier"
+    let noInternetConnectionText = "Error, no Internet connection available"
     
     // MARK: - Initializers
     
@@ -42,11 +58,33 @@ class AlbumsView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
+    // MARK: - Private methods
+    
+    /// Hide the activity indicador
+    fileprivate func hideActivityIndicator() {
+        hideNoInternetConnectionLabel()
+        albumsActivityIndicatorView.stopAnimating()
+        albumsActivityIndicatorView.isHidden = true
+    }
+    
+    /// Hide the no Internet connection label
+    fileprivate func hideNoInternetConnectionLabel() {
+        noInternetConnectionLabel.isHidden = true
+    }
+    
     // MARK: - Public methods
     
     /// Reload table view
     func reloadTable() {
+        hideNoInternetConnectionLabel()
+        hideActivityIndicator()
         albumsTableView.reloadData()
         albumsTableView.isHidden = false
+    }
+    
+    /// Show the no Internet connection label
+    func showNoInternetConnectionLabel() {
+        hideActivityIndicator()
+        noInternetConnectionLabel.isHidden = false
     }
 }

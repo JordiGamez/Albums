@@ -21,14 +21,19 @@ extension SwinjectStoryboard {
         defaultContainer.register(LoadAlbumsUseCaseProtocol.self) { resolver in
             LoadAlbumsUseCase(provider: resolver.resolve(AlbumsProviderProtocol.self)!)
         }
+        defaultContainer.register(SaveAlbumsUseCaseProtocol.self) { resolver in
+            SaveAlbumsUseCase(provider: resolver.resolve(AlbumsProviderProtocol.self)!)
+        }
         
         // MARK: - Providers
         
         defaultContainer.autoregister(AlbumsProviderProtocol.self, initializer: AlbumsProvider.init)
+        defaultContainer.autoregister(NetworkProviderProtocol.self, initializer: NetworkProvider.init)
         
         // MARK: - DataSources
         
         defaultContainer.autoregister(RemoteDataSourceProtocol.self, initializer: RemoteDataSource.init)
+        defaultContainer.autoregister(LocalDataSourceProtocol.self, initializer: LocalDataSource.init)
         
         // MARK: - Clients
         

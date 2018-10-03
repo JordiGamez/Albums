@@ -51,6 +51,11 @@ extension AlbumsViewController: AlbumsViewProtocol {
         albums = list
         customView.reloadTable()
     }
+    
+    /// Show error
+    func showError() {
+        customView.showNoInternetConnectionLabel()
+    }
 }
 
 // MARK: - UITableViewDelegate and UITableViewDataSource protocol conformance

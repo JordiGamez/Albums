@@ -11,7 +11,10 @@ class AlbumsMapper {
         var albums = [Album]()
         
         for albumEntity in entity.albums {
-            let object = Album(id: albumEntity.id, name: albumEntity.title)
+            let object = Album(
+                id: albumEntity.id,
+                userId: albumEntity.userId,
+                name: albumEntity.title)
             albums.append(object)
         }
         

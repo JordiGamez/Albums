@@ -7,11 +7,13 @@ class AlbumsPresenter {
     
     var view: AlbumsViewProtocol?
     var loadAlbumsUseCase: LoadAlbumsUseCaseProtocol?
+    var saveAlbumsUseCase: SaveAlbumsUseCaseProtocol?
     
     // MARK: - Initializers
     
-    init(loadAlbumsUseCase: LoadAlbumsUseCaseProtocol) {
+    init(loadAlbumsUseCase: LoadAlbumsUseCaseProtocol, saveAlbumsUseCase: SaveAlbumsUseCaseProtocol) {
         self.loadAlbumsUseCase = loadAlbumsUseCase
+        self.saveAlbumsUseCase = saveAlbumsUseCase
     }
 }
 
@@ -33,9 +35,11 @@ extension AlbumsPresenter: AlbumsPresenterProtocol {
                 DispatchQueue.main.async {
                     self.view?.display(list: response)
                 }
+                // Save albums list to CoreData
+                self.saveAlbumsUseCase?.execute(albums: response)
             }, onError: { error in
                 DispatchQueue.main.async {
-                    
+                    self.view?.showError()
                 }
             }
         )

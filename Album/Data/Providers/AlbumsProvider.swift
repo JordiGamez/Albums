@@ -6,11 +6,15 @@ class AlbumsProvider {
     // MARK: - Variables
     
     var remoteDataSource: RemoteDataSourceProtocol?
+    var localDataSource: LocalDataSourceProtocol?
+    var networkProvider: NetworkProviderProtocol?
     
     // MARK: - Initializers
     
-    init(remoteDataSource: RemoteDataSourceProtocol) {
+    init(remoteDataSource: RemoteDataSourceProtocol, localDataSource: LocalDataSourceProtocol, networkProvider: NetworkProviderProtocol) {
         self.remoteDataSource = remoteDataSource
+        self.localDataSource = localDataSource
+        self.networkProvider = networkProvider
     }
 }
 
@@ -22,6 +26,17 @@ extension AlbumsProvider: AlbumsProviderProtocol {
     ///
     /// - Returns: Albums Observable
     func getAlbums() -> Observable<Albums> {
-        return (remoteDataSource?.getAlbums())!
+        if (networkProvider?.hasInternetConnection())! {
+            return (remoteDataSource?.getAlbums())!
+        } else {
+            return (localDataSource?.getAlbums())!
+        }
+    }
+    
+    /// Save albums list
+    ///
+    /// - Parameter albums: Albums list
+    func saveAlbums(albums: Albums) {
+        localDataSource?.saveAlbums(albums: albums)
     }
 }

@@ -6,6 +6,9 @@ target 'Album' do
   use_frameworks!
 
   # Pods for Album
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Alamofire'
 
   target 'AlbumTests' do
     inherit! :search_paths

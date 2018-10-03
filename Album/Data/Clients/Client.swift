@@ -26,8 +26,16 @@ extension Client: ClientProtocol {
             
             Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseData() { response in
                 
+                var albumsArray = [AlbumEntity]()
+                
+                if let data = response.result.value {
+                    // Decoder
+                    albumsArray = try! JSONDecoder().decode([AlbumEntity].self, from: data)
+                }
+                
                 switch response.result {
                 case .success:
+                    observer.on(.next(AlbumsEntity(albums: albumsArray)))
                     observer.onCompleted()
                 case .failure(let error):
                     observer.on(.error(error))

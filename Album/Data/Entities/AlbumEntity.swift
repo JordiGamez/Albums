@@ -1,5 +1,7 @@
-import Foundation
+import UIKit
 
-struct AlbumEntity {
-    var name: String
+struct AlbumEntity: Decodable {
+    var userId: Int
+    var id: Int
+    var title: String
 }

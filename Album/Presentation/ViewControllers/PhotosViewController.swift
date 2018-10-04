@@ -60,7 +60,22 @@ extension PhotosViewController: PhotosViewProtocol {
     
     /// Show error
     func showError() {
+        let alert = UIAlertController(title: "You are offline", message: "Please check your connection and try again", preferredStyle: UIAlertController.Style.alert)
         
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    /// Open the URL
+    ///
+    /// - Parameter url: The website url
+    func open(url: URL) {
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
@@ -82,6 +97,7 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
         if let photos = photos?.list {
             cell.titleLabel.text = photos[indexPath.item].title
             cell.photoImageView.kf.setImage(with: URL(string: photos[indexPath.item].thumbnailUrl))
+            cell.url = photos[indexPath.item].url
         }
         
         return cell
@@ -94,5 +110,12 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
         
         return CGSize(width: size, height: size)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell {
+            presenter?.open(url: cell.url!)
+        }
     }
 }

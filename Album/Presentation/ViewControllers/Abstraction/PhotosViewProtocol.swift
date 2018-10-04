@@ -10,4 +10,9 @@ protocol PhotosViewProtocol {
     
     /// Show error
     func showError()
+    
+    /// Open the URL
+    ///
+    /// - Parameter url: The website url
+    func open(url: URL)
 }

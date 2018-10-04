@@ -12,4 +12,9 @@ protocol PhotosPresenterProtocol {
     ///
     /// - Parameter id: Album id
     func loadPhotosFromAlbumWith(id: Int)
+    
+    /// Open a url
+    ///
+    /// - Parameter url: The website url
+    func open(url: String)
 }

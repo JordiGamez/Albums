@@ -16,6 +16,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Variable
+    
+    var url: String?
+    
     // MARK: - Override methods
     
     override func awakeFromNib() {

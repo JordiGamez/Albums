@@ -8,11 +8,13 @@ class PhotosPresenter {
     
     var view: PhotosViewProtocol?
     var loadPhotosUseCase: LoadPhotosUseCaseProtocol?
+    var networkProvider: NetworkProviderProtocol?
     
     // MARK: - Initializers
     
-    init(loadPhotosUseCase: LoadPhotosUseCaseProtocol) {
+    init(loadPhotosUseCase: LoadPhotosUseCaseProtocol, networkProvider: NetworkProviderProtocol) {
         self.loadPhotosUseCase = loadPhotosUseCase
+        self.networkProvider = networkProvider
     }
 }
 
@@ -42,5 +44,18 @@ extension PhotosPresenter: PhotosPresenterProtocol {
                 }
             }
         )
+    }
+    
+    /// Open a url
+    ///
+    /// - Parameter url: The website url
+    func open(url: String) {
+        if (networkProvider?.hasInternetConnection())! {
+            if let url = URL(string: url) {
+                self.view?.open(url: url)
+            }
+        } else {
+            self.view?.showError()
+        }
     }
 }

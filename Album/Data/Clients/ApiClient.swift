@@ -29,4 +29,14 @@ extension ApiClient: ApiClientProtocol {
         
         return (client?.request(url: url + endpoint, method: .get, parameters: [:], encoding: URLEncoding.default, headers: nil))!
     }
+    
+    /// Get the photos list
+    ///
+    /// - Parameter id: Album id
+    /// - Returns: PhotosEntity Observable
+    func getPhotosFromAlbum(id: Int) -> Observable<PhotosEntity> {
+        let endpoint = "/photos"
+        
+        return (client?.request(albumId: id, url: url + endpoint, method: .get, parameters: [:], encoding: URLEncoding.default, headers: nil))!
+    }
 }

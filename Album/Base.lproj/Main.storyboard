@@ -22,11 +22,30 @@
                     <navigationItem key="navigationItem" id="daW-cc-pCF"/>
                     <connections>
                         <outlet property="customView" destination="8bC-Xf-vdC" id="eWZ-QU-4Mz"/>
+                        <segue destination="IOr-wZ-Tfj" kind="show" identifier="toPhotosView" id="vPK-jZ-Sey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1094" y="-564"/>
+        </scene>
+        <!--Photos View Controller-->
+        <scene sceneID="IVV-c5-apI">
+            <objects>
+                <viewController id="IOr-wZ-Tfj" customClass="PhotosViewController" customModule="Album" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvT-fi-M5i" customClass="PhotosView" customModule="Album" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wJr-vl-S6I"/>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="qvT-fi-M5i" id="zdf-mm-E9q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0z-VO-Rvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2150" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SmR-W7-dHx">

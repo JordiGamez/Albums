@@ -11,11 +11,13 @@ class AlbumsViewController: UIViewController {
     
     let customCellIdentifier = "AlbumTableViewCellIdentifier"
     let customTitle = "Albums"
+    let segueIdentifier = "toPhotosView"
     
     // MARK: - Variables
     
     var presenter: AlbumsPresenterProtocol?
     var albums: Albums?
+    var selectedAlbumId: Int?
     
     // MARK: - Lifecycle
     
@@ -43,6 +45,17 @@ class AlbumsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: - Overriden methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            if let albumId = selectedAlbumId {
+                let destination = (segue.destination as! PhotosViewController)
+                destination.albumId = albumId
+            }
+        }
+    }
 }
 
 // MARK: - AlbumsViewProtocol protocol conformance
@@ -60,6 +73,14 @@ extension AlbumsViewController: AlbumsViewProtocol {
     /// Show error
     func showError() {
         customView.showNoInternetConnectionLabel()
+    }
+    
+    /// Go to photos screen
+    ///
+    /// - Parameter id: Album id
+    func goToPhotosScreenWith(id: Int) {
+        selectedAlbumId = id
+        performSegue(withIdentifier: segueIdentifier, sender: nil)
     }
 }
 
@@ -89,5 +110,12 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = albums?.list[indexPath.row].name
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let cell = albums?.list[indexPath.row] {
+            presenter?.performSegueWith(id: cell.id)
+        }
     }
 }

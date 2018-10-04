@@ -10,4 +10,9 @@ protocol AlbumsViewProtocol {
     
     /// Show error
     func showError()
+    
+    /// Go to photos screen
+    ///
+    /// - Parameter id: Album id
+    func goToPhotosScreenWith(id: Int)
 }

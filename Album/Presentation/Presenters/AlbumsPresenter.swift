@@ -45,4 +45,11 @@ extension AlbumsPresenter: AlbumsPresenterProtocol {
             }
         )
     }
+    
+    /// Perform segue
+    ///
+    /// - Parameter id: Album id
+    func performSegueWith(id: Int) {
+        self.view?.goToPhotosScreenWith(id: id)
+    }
 }

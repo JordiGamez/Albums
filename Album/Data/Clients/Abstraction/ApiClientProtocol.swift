@@ -8,4 +8,10 @@ protocol ApiClientProtocol {
     ///
     /// - Returns: AlbumsEntity Observable
     func getAlbums() -> Observable<AlbumsEntity>
+    
+    /// Get the photos list
+    ///
+    /// - Parameter id: Album id
+    /// - Returns: PhotosEntity Observable
+    func getPhotosFromAlbum(id: Int) -> Observable<PhotosEntity>
 }

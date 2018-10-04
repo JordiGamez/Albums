@@ -10,4 +10,9 @@ protocol AlbumsPresenterProtocol {
     
     /// Load albums
     func loadAlbums()
+    
+    /// Perform segue
+    ///
+    /// - Parameter id: Album id
+    func performSegueWith(id: Int)
 }

@@ -7,15 +7,21 @@ import SwinjectAutoregistration
 extension SwinjectStoryboard {
     @objc class func setup() {
         
+        Container.loggingFunction = nil
+        
         // MARK: - ViewControllers
         
         defaultContainer.storyboardInitCompleted(AlbumsViewController.self) { resolver, controller in
             controller.presenter = resolver ~> AlbumsPresenterProtocol.self
         }
+        defaultContainer.storyboardInitCompleted(PhotosViewController.self) { resolver, controller in
+            controller.presenter = resolver ~> PhotosPresenterProtocol.self
+        }
         
         // MARK: - Presenters
         
         defaultContainer.autoregister(AlbumsPresenterProtocol.self, initializer: AlbumsPresenter.init)
+        defaultContainer.autoregister(PhotosPresenterProtocol.self, initializer: PhotosPresenter.init)
         
         // MARK: - UseCases
         
@@ -25,11 +31,15 @@ extension SwinjectStoryboard {
         defaultContainer.register(SaveAlbumsUseCaseProtocol.self) { resolver in
             SaveAlbumsUseCase(provider: resolver.resolve(AlbumsProviderProtocol.self)!)
         }
+        defaultContainer.register(LoadPhotosUseCaseProtocol.self) { resolver in
+            LoadPhotosUseCase(provider: resolver.resolve(PhotosProviderProtocol.self)!)
+        }
         
         // MARK: - Providers
         
         defaultContainer.autoregister(AlbumsProviderProtocol.self, initializer: AlbumsProvider.init)
         defaultContainer.autoregister(NetworkProviderProtocol.self, initializer: NetworkProvider.init)
+        defaultContainer.autoregister(PhotosProviderProtocol.self, initializer: PhotosProvider.init)
         
         // MARK: - DataSources
         

@@ -28,4 +28,15 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
             return mapper.transform(entity)
         })!)
     }
+    
+    /// Get the photos list
+    ///
+    /// - Parameter id: Album id
+    /// - Returns: PhotosEntity Observable
+    func getPhotosFromAlbum(id: Int) -> Observable<Photos> {
+        return ((apiClient?.getPhotosFromAlbum(id: id).map { entity -> Photos in
+            let mapper = PhotosMapper()
+            return mapper.transform(entity)
+        })!)
+    }
 }

@@ -13,4 +13,8 @@ enum AccessibilityIdentifier {
     enum AlbumTableViewCell: String {
         case albumTitleLabel                = "AlbumTableViewCell_albumTitleLabel"
     }
+    
+    enum PhotosView: String {
+        case contentView                    = "PhotosView_contentView"
+    }
 }

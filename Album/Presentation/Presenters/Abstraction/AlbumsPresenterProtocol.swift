@@ -1,5 +1,6 @@
 import Foundation
 
+/// Abstraction for AlbumsPresenter
 protocol AlbumsPresenterProtocol {
     
     /// Bind the view with the presenter

@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 
+/// Use case responsible for saving albums
 class SaveAlbumsUseCase {
     
     // MARK: - Variables

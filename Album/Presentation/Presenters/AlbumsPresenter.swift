@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 
+/// Presenter for AlbumsViewController
 class AlbumsPresenter {
     
     // MARK: - Variables

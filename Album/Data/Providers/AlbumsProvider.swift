@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 
+/// Responsible for providing albums
 class AlbumsProvider {
     
     // MARK: - Variables

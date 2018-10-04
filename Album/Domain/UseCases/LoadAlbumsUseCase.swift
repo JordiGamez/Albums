@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 
+/// Use case responsible for loading albums
 class LoadAlbumsUseCase {
     
     // MARK: - Variables

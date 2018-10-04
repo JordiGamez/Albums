@@ -2,6 +2,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
+/// Responsible for the communication with the API
 class ApiClient {
     
     // MARK: - Variables

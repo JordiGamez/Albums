@@ -2,6 +2,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
+/// Performs the network request
 class Client {
     
     init() {}

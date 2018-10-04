@@ -2,6 +2,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
+/// Abstraction for Client
 protocol ClientProtocol {
     
     /// Request

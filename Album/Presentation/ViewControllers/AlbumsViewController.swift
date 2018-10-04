@@ -1,5 +1,6 @@
 import UIKit
 
+/// Display a list of albums
 class AlbumsViewController: UIViewController {
 
     // MARK: - IBOutlets

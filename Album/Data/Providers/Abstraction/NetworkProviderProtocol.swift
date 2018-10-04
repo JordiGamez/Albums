@@ -1,5 +1,6 @@
 import Foundation
 
+/// Abstraction for NetworkProvider
 protocol NetworkProviderProtocol {
     
     /// Check if device has Internet connection

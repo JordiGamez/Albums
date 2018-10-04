@@ -3,6 +3,7 @@ import Swinject
 import SwinjectStoryboard
 import SwinjectAutoregistration
 
+/// Dependency injection
 extension SwinjectStoryboard {
     @objc class func setup() {
         

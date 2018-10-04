@@ -1,5 +1,6 @@
 import Foundation
 
+/// Abstraction for SaveAlbumsUseCase
 protocol SaveAlbumsUseCaseProtocol {
     
     /// Save albums list

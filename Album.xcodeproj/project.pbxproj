@@ -239,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				C653171B216521090085464C /* Models */,
-				C653171C2165210E0085464C /* Params */,
 				C653171A216521030085464C /* UseCases */,
 			);
 			path = Domain;
@@ -320,13 +319,6 @@
 				C65317372165244F0085464C /* Albums.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		C653171C2165210E0085464C /* Params */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Params;
 			sourceTree = "<group>";
 		};
 		C653171D216521130085464C /* Presenters */ = {

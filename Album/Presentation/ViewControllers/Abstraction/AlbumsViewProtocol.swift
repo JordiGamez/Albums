@@ -1,5 +1,6 @@
 import Foundation
 
+/// Abstraction for AlbumsViewController
 protocol AlbumsViewProtocol {
     
     /// Display the list of albums

@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 
+/// Responsible for handling the connection with the remote data source
 class RemoteDataSource {
     
     // MARK: - Variables

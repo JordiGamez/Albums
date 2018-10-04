@@ -1,6 +1,7 @@
 import Foundation
 import SystemConfiguration
 
+/// Responsible for the network status
 class NetworkProvider {
     
     init() {}

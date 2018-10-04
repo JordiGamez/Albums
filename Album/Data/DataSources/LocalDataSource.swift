@@ -2,6 +2,7 @@ import UIKit
 import CoreData
 import RxSwift
 
+/// Responsible for accessing, saving and deleting the local data
 class LocalDataSource {
     
     // MARK: - Constants

@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 
+/// Abstraction for LocalDataSource
 protocol LocalDataSourceProtocol {
     
     /// Get the albums list

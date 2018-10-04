@@ -12,6 +12,7 @@ target 'Album' do
   pod 'Swinject'
   pod 'SwinjectStoryboard'
   pod 'SwinjectAutoregistration'
+  pod 'Kingfisher'
   
   target 'AlbumTests' do
     inherit! :search_paths

@@ -64,6 +64,8 @@
 		C6F4D8FD2166866C001F42B1 /* PhotosMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4D8FC2166866C001F42B1 /* PhotosMapper.swift */; };
 		C6F4D8FF216686AD001F42B1 /* PhotosEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4D8FE216686AD001F42B1 /* PhotosEntity.swift */; };
 		C6F4D901216686B7001F42B1 /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4D900216686B7001F42B1 /* PhotoEntity.swift */; };
+		C6F4D90321668D21001F42B1 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4D90221668D21001F42B1 /* PhotoCollectionViewCell.swift */; };
+		C6F4D90521668E93001F42B1 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6F4D90421668E93001F42B1 /* PhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,8 @@
 		C6F4D8FC2166866C001F42B1 /* PhotosMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosMapper.swift; sourceTree = "<group>"; };
 		C6F4D8FE216686AD001F42B1 /* PhotosEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosEntity.swift; sourceTree = "<group>"; };
 		C6F4D900216686B7001F42B1 /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
+		C6F4D90221668D21001F42B1 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6F4D90421668E93001F42B1 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		CFFE90882B168CFF72EE5959 /* Pods_AlbumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03B773B0290EE9BB5FA5509 /* Pods-AlbumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumTests/Pods-AlbumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7672A15D706ADEC798D0FCB /* Pods-AlbumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlbumUITests/Pods-AlbumUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 				C653175A216546BF0085464C /* AlbumsView.xib */,
 				C653175E2165479F0085464C /* AlbumTableViewCell.xib */,
 				C6F4D8F22166834B001F42B1 /* PhotosView.xib */,
+				C6F4D90421668E93001F42B1 /* PhotoCollectionViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				C653172D216522CE0085464C /* AlbumsView.swift */,
 				C653175C216547480085464C /* AlbumTableViewCell.swift */,
 				C6F4D8E621668156001F42B1 /* PhotosView.swift */,
+				C6F4D90221668D21001F42B1 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				C65316EC21651CF00085464C /* Assets.xcassets in Resources */,
 				C653175B216546BF0085464C /* AlbumsView.xib in Resources */,
 				C6F4D8F32166834B001F42B1 /* PhotosView.xib in Resources */,
+				C6F4D90521668E93001F42B1 /* PhotoCollectionViewCell.xib in Resources */,
 				C653175F2165479F0085464C /* AlbumTableViewCell.xib in Resources */,
 				C65316E721651CED0085464C /* Main.storyboard in Resources */,
 			);
@@ -684,6 +691,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Album/Pods-Album-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -693,6 +701,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -734,6 +743,7 @@
 				C653172C2165220D0085464C /* AlbumsViewProtocol.swift in Sources */,
 				C6F4D8FD2166866C001F42B1 /* PhotosMapper.swift in Sources */,
 				C6531742216528010085464C /* RemoteDataSource.swift in Sources */,
+				C6F4D90321668D21001F42B1 /* PhotoCollectionViewCell.swift in Sources */,
 				C6F4D8ED2166820C001F42B1 /* PhotosViewProtocol.swift in Sources */,
 				C6F4D8FB216685F3001F42B1 /* PhotosProvider.swift in Sources */,
 				C6531744216528180085464C /* RemoteDataSourceProtocol.swift in Sources */,
@@ -953,10 +963,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = Album/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jordigamez.Album;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -972,10 +979,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = Album/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jordigamez.Album;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -992,11 +996,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = AlbumTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jordigamez.AlbumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1014,11 +1014,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = AlbumTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jordigamez.AlbumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1035,11 +1031,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = AlbumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jordigamez.AlbumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1056,11 +1048,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GF85C9B94;
 				INFOPLIST_FILE = AlbumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jordigamez.AlbumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -34,11 +34,11 @@ extension PhotosPresenter: PhotosPresenterProtocol {
         _ = loadPhotosUseCase?.execute(albumId: id).subscribe(
             onNext: { response in
                 DispatchQueue.main.async {
-                    
+                    self.view?.display(list: response)
                 }
             }, onError: { error in
                 DispatchQueue.main.async {
-                    
+                    self.view?.showError()
                 }
             }
         )

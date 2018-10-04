@@ -9,10 +9,19 @@ class PhotosView: UIView {
             contentView.accessibilityIdentifier = AccessibilityIdentifier.PhotosView.contentView.rawValue
         }
     }
+    @IBOutlet weak var photosCollectionView: UICollectionView! {
+        didSet {
+            photosCollectionView.accessibilityIdentifier = AccessibilityIdentifier.PhotosView.photosCollectionView.rawValue
+            photosCollectionView.isHidden = true
+            photosCollectionView.register(UINib(nibName: cellView, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        }
+    }
     
     // MARK: - Constants
     
     let viewName = "PhotosView"
+    let cellView = "PhotoCollectionViewCell"
+    let cellIdentifier = "PhotoCollectionViewCellIdentifier"
     
     // MARK: - Initializers
     
@@ -31,5 +40,13 @@ class PhotosView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    // MARK: - Public methods
+    
+    /// Reload collection data
+    func reloadCollection() {
+        photosCollectionView.reloadData()
+        photosCollectionView.isHidden = false
     }
 }

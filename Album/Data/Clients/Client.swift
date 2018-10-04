@@ -63,9 +63,19 @@ extension Client: ClientProtocol {
             
             Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseData() { response in
                 
+                var photosArray = [PhotoEntity]()
+                
+                if let data = response.result.value {
+                    // Decoder
+                    photosArray = try! JSONDecoder().decode([PhotoEntity].self, from: data)
+                    
+                    // Filter
+                    photosArray = photosArray.filter({$0.albumId == albumId})
+                }
+                
                 switch response.result {
                 case .success:
-                    
+                    observer.on(.next(PhotosEntity(photos: photosArray)))
                     observer.onCompleted()
                 case .failure(let error):
                     observer.on(.error(error))

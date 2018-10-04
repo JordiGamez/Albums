@@ -10,6 +10,7 @@ class AlbumsViewController: UIViewController {
     // MARK: - Constants
     
     let customCellIdentifier = "AlbumTableViewCellIdentifier"
+    let customTitle = "Albums"
     
     // MARK: - Variables
     
@@ -20,6 +21,9 @@ class AlbumsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = customTitle
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
         
         customView.albumsTableView.dataSource = self
         customView.albumsTableView.delegate = self
